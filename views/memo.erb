@@ -1,0 +1,25 @@
+<div class="title">
+  <%= @memo_title %>
+</div>
+<div class="text">
+  <p style="white-space:pre-wrap;"><%= @memo_body %></p>
+</div>
+<div class ="form-buttons">
+  <form action="/memos/<%= @memo_id %>/edit" method="GET">
+    <div class="form-button">
+      <input type="submit" value="変更">
+    </div>
+  </form>
+  <form action="/memos/<%= @memo_id %>" method="POST">
+    <div class="form-button">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="削除">
+    </div>
+  </form>
+  <form action="/memos" method="GET">
+    <div class="form-button">
+      <input type="submit" value="TOP">
+    </div>
+  </form>
+</div>
+

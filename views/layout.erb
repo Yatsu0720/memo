@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <title><%= @title %></title>
+</head>
+<body>
+  <header class="page-header wrapper">
+    <h1><a href='http://localhost:4567/memos'>メモアプリ</a></h1>
+    <form action="/memos/new" method="GET">
+      <div class="add-button">
+        <input type="submit" value="追加" class="form-submit-button">
+      </div>
+    </form>
+  </header>
+  <%= yield %>
+  <footer></footer>
+</body>
+</html>
