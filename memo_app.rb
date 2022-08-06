@@ -62,7 +62,7 @@ post '/memos' do
   @memo_body = h(params[:memo_body]).to_s
   @memo_id = h(params[:id]).to_s
 
-  conn.exec("INSERT INTO memo_data (memo_title, memo_body, memo_id)  VALUES ( '#{@memo_title}', '#{@memo_body}', '#{@memo_id}')")
+  conn.exec('INSERT INTO memo_data (memo_title, memo_body, memo_id)  VALUES ($1, $2, $3);', [@memo_title.to_s, @memo_body.to_s, @memo_id.to_s])
 
   redirect '/memos'
 end
